@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelear.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Personas</title>
+<link href="../static/css/boostrap.css" rel="stylesheet" th:href="@{/css/boostrap.css}">
+</head>
+<body>
+	<div class="container">
+		<form action="#" th:action="@(/save)" th:object=${persona} method="post">
+			<div class="form-group">
+				<label for="nombre">Nombre</label>
+				<input type="text" class="form-control" id="nombre" name="nombre">
+			</div>
+				<label for="apellido">apellido</label>
+				<input type="text" class="form-control" id="nombre" name="nombre">
+			</div>
+				<label for="direccion">direccion</label>
+				<input type="text" class="form-control" id="nombre" name="nombre">
+			</div>
+				<label for="telefono">telefono</label>
+				<input type="text" class="form-control" id="nombre" name="nombre">
+			</div>
+			<button type="submit" class="btn btn-success">Guardar</button>
+		</form>
+	</div>
+</body>
+</html>
