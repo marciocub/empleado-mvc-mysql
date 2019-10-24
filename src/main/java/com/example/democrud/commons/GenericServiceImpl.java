@@ -34,13 +34,13 @@ public abstract class GenericServiceImpl <T , ID extends Serializable> implement
 	@Override
 	public List<T> getAll() {
 		List<T> returnList = new ArrayList<>();
-		//getDao().findAll().forEach(obj => returnList.add(obj));
+		getDao().findAll().forEach(obj -> returnList.add(obj));
 		//se hace esto por que tengo java 5 en la maquina
-		Iterable<T> allList = getDao().findAll();
+		/*Iterable<T> allList = getDao().findAll();
 		
 		for (T elem : allList) {
 			returnList.add(elem);
-		}
+		}*/
 				
 		return returnList;
 	}

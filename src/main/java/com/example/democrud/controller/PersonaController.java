@@ -19,15 +19,17 @@ public class PersonaController {
 
 	@RequestMapping("/")
 	public String index(Model model){
-		model.addAttribute("lisr", personaServiceAPI.getAll());
+		model.addAttribute("list", personaServiceAPI.getAll());
 		return "index";
 	}
 	
 	@GetMapping("/save/{id}")
-	public String save(@PathVariable("id") Long id, Model model){
+	public String showSave(@PathVariable("id") Long id, Model model){
 		
-		if(id != null){
+		if(id != null && id !=0){
 			model.addAttribute("persona", personaServiceAPI.get(id));			
+		}else {
+			model.addAttribute("persona", new Persona());
 		}
 		return "save";
 		
@@ -36,13 +38,13 @@ public class PersonaController {
 	@PostMapping("/save")
 	public String save(Persona persona, Model model){
 		personaServiceAPI.save(persona);
-		return("redirect/");
+		return("redirect:/");
 	}
 
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable Long id , Model model){
 		personaServiceAPI.delete(id);
-		return("redirect/");
+		return("redirect:/");
 	}
 
 
